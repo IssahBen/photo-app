@@ -1,5 +1,7 @@
-console.log("connected")
-$(document).on(' ready turbolinks:load', function () {
+document.addEventListener("turbo:load", () => {
+    console.log("turbo")
+});
+document.addEventListener('turbo:load', function () {
 
 
     var show_error, stripeResponseHandler, submitHandler;
@@ -68,13 +70,13 @@ $(document).on(' ready turbolinks:load', function () {
 
     show_error = function (message) {
 
-        if ($("#flash-messages").size() < 1) {
+        if ($("#flash-messages").length < 1) {
 
-            $('div.container.main div:first').prepend("<div id='flash-messages'></div>")
+            $('div.container div:first').prepend("<div id='flash-messages'></div>")
 
         }
 
-        $("#flash-messages").html('<div class="alert alert-warning"><a class="close" data-dismiss="alert">×</a><div id="flash_alert">' + message + '</div></div>');
+        $("#flash-messages").html('<div class="alert alert-danger alert-dismissible fade show col-sm-9" role="alert"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button><div id="flash_alert">' + message + '</div></div>');
 
         $('.alert').delay(5000).fadeOut(3000);
 

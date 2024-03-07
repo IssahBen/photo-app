@@ -78,3 +78,4 @@ end
 
 gem 'stripe'
 gem 'dotenv', groups: [:development, :test]
+

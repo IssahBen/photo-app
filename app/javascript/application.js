@@ -6,5 +6,5 @@ import "popper"
 
 import "bootstrap"
 Rails.start()
-console.log("a");
+console.log("acc")
 
